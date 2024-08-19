@@ -21,6 +21,6 @@ connectDb().then(() => {
 		console.log(`Server is working on ${PORT}`);
 	});
 }).catch((err) => {
-	console.error('Failed to connect to MongoDB:', err);
-	process.exit(1); // Принудительно завершаем приложение
-});
+	console.error('Failed to connect to MongoDB:', err.message, err.stack);
+	process.exit(1);
+})
