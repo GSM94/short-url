@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 const link = process.env.MONGODB_URI
+const dotenv = require('dotenv');
+dotenv.config()
 
 const connectDb = async () => {
   console.log('Connecting to MongoDB');
