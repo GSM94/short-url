@@ -11,6 +11,7 @@ const linkRoutes = require('./routes/links')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.urlencoded({ extended: true })) // позволяет считывать данные из html форм
 app.use(bodyParser.json())// позволяет серверу парсить данные JSON
+
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
@@ -22,6 +23,5 @@ connectDb().then(() => {
 		console.log(`Server is working on ${PORT}`);
 	});
 }).catch((err) => {
-	console.error('Failed to connect to MongoDB:', err.message, err.stack);
-	process.exit(1);
+	console.error('Eror', JSON.stringify(err));
 })
