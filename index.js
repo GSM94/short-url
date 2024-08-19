@@ -18,8 +18,9 @@ app.use('/links', linkRoutes)
 
 connectDb().then(() => {
 	app.listen(PORT, () => {
-		console.log(`Server is working on ${PORT}`)
-	})
-}).catch(err => {
-	console.error('Error', JSON.stringify(err))
-})
+		console.log(`Server is working on ${PORT}`);
+	});
+}).catch((err) => {
+	console.error('Failed to connect to MongoDB:', err);
+	process.exit(1); // Принудительно завершаем приложение
+});
