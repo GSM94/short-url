@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const link = 'mongodb+srv://shoma994:GeoWeb94@nuxt-blog.xycw8aw.mongodb.net/urlShortener?retryWrites=true&w=majority&appName=nuxt-blog'
+const link = process.env.MONGODB_URI
 
 const connectDb = () => {
 	console.log('Connecting to MongoDB');
